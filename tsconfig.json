@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "allowJs": true,
+        "target": "ES2020"
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

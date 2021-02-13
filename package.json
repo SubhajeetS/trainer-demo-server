@@ -12,8 +12,9 @@
   },
   "scripts": {
     "start": "pm2 start ecosystem.config.json --no-daemon",
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon",
     "dev:debug": "cross-env NODE_ENV=development nodemon --inspect=0.0.0.0 src/index.js",
+    "build": "tsc",
     "test": "jest -i",
     "test:watch": "jest -i --watchAll",
     "coverage": "jest -i --coverage",
@@ -69,6 +70,10 @@
     "node-mocks-http": "^1.8.0",
     "nodemon": "^2.0.0",
     "prettier": "^2.0.5",
-    "supertest": "^6.0.1"
+    "supertest": "^6.0.1",
+    "ts-jest": "26.5.1",
+    "ts-node": "9.1.1",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "4.1.5"
   }
 }
