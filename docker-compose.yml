@@ -5,7 +5,7 @@ services:
     build: .
     image: node-app
     environment:
-      - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
+      - MONGODB_URL=mongodb://mongodb:27017/grytfit
     ports:
       - '3000:3000'
     depends_on:
@@ -20,12 +20,12 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - dbdata:/data/db
+      - grytfit:/data/db
     networks:
       - node-network
 
 volumes:
-  dbdata:
+  grytfit:
 
 networks:
   node-network:
