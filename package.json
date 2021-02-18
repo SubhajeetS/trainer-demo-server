@@ -11,10 +11,10 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "start": "pm2 start ecosystem.config.json --no-daemon",
-    "dev": "cross-env NODE_ENV=development nodemon",
-    "dev:debug": "cross-env NODE_ENV=development nodemon --inspect=0.0.0.0 src/index.js",
-    "build": "tsc",
+    "start": "npm run build && pm2 start ecosystem.config.json --no-daemon",
+    "dev": "cross-env NODE_ENV=development ts-node-dev --respawn --exit-child --transpile-only src/index.ts",
+    "dev:debug-docker": "cross-env NODE_ENV=development ts-node-dev --inspect=0.0.0.0 --respawn --exit-child --transpile-only src/index.ts",
+    "build": "npm run lint:fix && npm run test && tsc",
     "test": "jest -i",
     "test:watch": "jest -i --watchAll",
     "coverage": "jest -i --coverage",
@@ -68,12 +68,11 @@
     "jest": "^26.0.1",
     "lint-staged": "^10.0.7",
     "node-mocks-http": "^1.8.0",
-    "nodemon": "^2.0.0",
     "prettier": "^2.0.5",
     "supertest": "^6.0.1",
     "ts-jest": "26.5.1",
     "ts-node": "9.1.1",
-    "ts-node-dev": "^1.1.1",
+    "ts-node-dev": "1.1.0",
     "typescript": "4.1.5"
   }
 }

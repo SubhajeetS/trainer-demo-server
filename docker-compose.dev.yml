@@ -4,6 +4,5 @@ services:
   node-app:
     container_name: node-app-dev
     ports:
-      - 3000:3000
       - 9229:9229
-    command: yarn dev -L
+    command: yarn dev:debug-docker -L
