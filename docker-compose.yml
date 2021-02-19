@@ -7,7 +7,7 @@ services:
     environment:
       - MONGODB_URL=mongodb://mongodb:27017/grytfit
     ports:
-      - '3000:3000'
+      - '3111:3000'
     depends_on:
       - mongodb
     volumes:
